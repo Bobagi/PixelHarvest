@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://cy5402yvm6b7a"]
+
+[ext_resource type="Texture2D" uid="uid://66sv4psrobxq" path="res://sprites/Scenario/Platform/SkullPlatform/base paint.PNG" id="1_dbooo"]
+[ext_resource type="Script" path="res://scripts/moving_platform.gd" id="1_jf7cg"]
+[ext_resource type="Texture2D" uid="uid://bx0cwmsnhy1a5" path="res://sprites/Scenario/Platform/SkullPlatform/base.PNG" id="2_sl3cj"]
+[ext_resource type="Texture2D" uid="uid://byp7ui3yeomwo" path="res://sprites/Scenario/Platform/SkullPlatform/details paint.PNG" id="3_c4ddc"]
+[ext_resource type="Texture2D" uid="uid://n13un530suni" path="res://sprites/Scenario/Platform/SkullPlatform/details.PNG" id="4_jswhg"]
+[ext_resource type="Texture2D" uid="uid://dlqm70j4mxvi7" path="res://sprites/Scenario/Platform/SkullPlatform/skulls paint.PNG" id="5_nlwkn"]
+[ext_resource type="Texture2D" uid="uid://clpx2yrqm146m" path="res://sprites/Scenario/Platform/SkullPlatform/skulls.PNG" id="6_giep2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2nno"]
+size = Vector2(282, 23)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_jf7cg")
+Wait_duration = 1.0
+
+[node name="platform" type="AnimatableBody2D" parent="."]
+position = Vector2(1, 0)
+collision_mask = 6
+
+[node name="BasePaint" type="Sprite2D" parent="platform"]
+texture = ExtResource("1_dbooo")
+
+[node name="Base" type="Sprite2D" parent="platform/BasePaint"]
+texture = ExtResource("2_sl3cj")
+
+[node name="DetailPaint" type="Sprite2D" parent="platform/BasePaint"]
+position = Vector2(0, 3)
+texture = ExtResource("3_c4ddc")
+
+[node name="Detail" type="Sprite2D" parent="platform/BasePaint/DetailPaint"]
+position = Vector2(1, 0)
+texture = ExtResource("4_jswhg")
+
+[node name="SkullPaint" type="Sprite2D" parent="platform/BasePaint/DetailPaint"]
+position = Vector2(0, -12)
+texture = ExtResource("5_nlwkn")
+
+[node name="Skull" type="Sprite2D" parent="platform/BasePaint/DetailPaint/SkullPaint"]
+position = Vector2(0, 1)
+texture = ExtResource("6_giep2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_p2nno")
+one_way_collision = true

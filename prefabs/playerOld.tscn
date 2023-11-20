@@ -1,0 +1,279 @@
+[gd_scene load_steps=17 format=3 uid="uid://cjo4m8o8vinu6"]
+
+[ext_resource type="Script" path="res://scripts/movement.gd" id="1_vu8dt"]
+[ext_resource type="Texture2D" uid="uid://pktw5c6m0g8d" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 13.PNG" id="2_oo8av"]
+[ext_resource type="Texture2D" uid="uid://nthlcfo53kff" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 1.PNG" id="3_tw260"]
+[ext_resource type="Texture2D" uid="uid://cm12jv7hv4kan" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 10.PNG" id="4_yb73r"]
+[ext_resource type="Texture2D" uid="uid://ci8mwg1hdeetv" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 12.PNG" id="5_uglvw"]
+[ext_resource type="Texture2D" uid="uid://cgtd802dfuciu" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 5.PNG" id="6_5y4qw"]
+[ext_resource type="Texture2D" uid="uid://b8yx2q6thnded" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 11.PNG" id="7_cfp8x"]
+[ext_resource type="Texture2D" uid="uid://cg8ahtgb0h1rp" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 9.PNG" id="8_61jgh"]
+[ext_resource type="Texture2D" uid="uid://dy15q6rprp2fx" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 3.PNG" id="9_glb0b"]
+[ext_resource type="Texture2D" uid="uid://dfvcp3gn7g5vx" path="res://sprites/Characters/MainCharacter/demon/Paint Layer 4.PNG" id="10_guv5k"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqq31"]
+radius = 117.0
+height = 472.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh6rm"]
+
+[sub_resource type="Animation" id="Animation_x03bb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, -230)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/head/leftEye:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_uglvw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/head/rightEye:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("7_cfp8x")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flipper/head/mouth:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_5y4qw")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Flipper/head/mouth:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 55.3333)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Flipper/body:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0226893]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Flipper/Hitbox:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_g7vhb"]
+resource_name = "attack1"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/head/mouth:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0001, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_5y4qw"), ExtResource("6_5y4qw"), ExtResource("8_61jgh"), ExtResource("6_5y4qw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/head/mouth:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2(3, 51.3333), Vector2(10, 55.3333), Vector2(3, 51.3333)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/body:skew")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0226893, 0.727802, 0.0226893]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flipper/head:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, -223.333), Vector2(121, -189), Vector2(5, -223.333)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Flipper/Hitbox:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_y7beb"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(5, -230), Vector2(5, -220), Vector2(5, -230)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/head/leftEye:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_uglvw"), ExtResource("9_glb0b"), ExtResource("5_uglvw")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/head/rightEye:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_cfp8x"), ExtResource("10_guv5k"), ExtResource("7_cfp8x")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n53i"]
+_data = {
+"RESET": SubResource("Animation_x03bb"),
+"attack1": SubResource("Animation_g7vhb"),
+"idle": SubResource("Animation_y7beb")
+}
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 517
+script = ExtResource("1_vu8dt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, -84)
+shape = SubResource("CapsuleShape2D_mqq31")
+
+[node name="Flipper" type="Node2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="Flipper"]
+position = Vector2(229, -36)
+scale = Vector2(9.51722, 16.3956)
+collision_layer = 256
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flipper/Hitbox"]
+shape = SubResource("RectangleShape2D_lh6rm")
+debug_color = Color(0.87451, 0, 0.254902, 0.639216)
+
+[node name="body" type="Sprite2D" parent="Flipper"]
+modulate = Color(0.847059, 0, 0.215686, 1)
+position = Vector2(4, -29)
+texture = ExtResource("2_oo8av")
+flip_h = true
+
+[node name="head" type="Sprite2D" parent="Flipper"]
+self_modulate = Color(0.847059, 0, 0.215686, 1)
+position = Vector2(5, -230)
+texture = ExtResource("3_tw260")
+
+[node name="horns" type="Sprite2D" parent="Flipper/head"]
+modulate = Color(0.996078, 0.905882, 0.803922, 1)
+position = Vector2(0, -76)
+texture = ExtResource("4_yb73r")
+
+[node name="leftEye" type="Sprite2D" parent="Flipper/head"]
+modulate = Color(0, 0.768627, 0.231373, 1)
+position = Vector2(43, -6)
+texture = ExtResource("5_uglvw")
+
+[node name="mouth" type="Sprite2D" parent="Flipper/head"]
+position = Vector2(10, 55.3333)
+texture = ExtResource("6_5y4qw")
+
+[node name="rightEye" type="Sprite2D" parent="Flipper/head"]
+modulate = Color(0, 0.768627, 0.231373, 1)
+position = Vector2(-44, 0)
+texture = ExtResource("7_cfp8x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_0n53i")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+enabled = false
+zoom = Vector2(2.15, 2.15)

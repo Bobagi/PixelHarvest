@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dd4c0uv8qxee2"]
+[gd_scene load_steps=10 format=3 uid="uid://dd4c0uv8qxee2"]
 
 [ext_resource type="Texture2D" uid="uid://ch3n8yl8yag2e" path="res://Art Assets/Background/Sky.png" id="1_g1y7l"]
 [ext_resource type="Script" path="res://scripts/parallax.gd" id="1_r68gv"]
@@ -7,10 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cy5402yvm6b7a" path="res://prefabs/scenario/moving_platform.tscn" id="6_jc5lp"]
 [ext_resource type="PackedScene" uid="uid://bjfmqwqb0npwl" path="res://prefabs/Player.tscn" id="7_3pu61"]
 [ext_resource type="PackedScene" uid="uid://draw61cg0p4k5" path="res://prefabs/Dropbox.tscn" id="7_52nhs"]
-[ext_resource type="Texture2D" uid="uid://w5ylsisx148s" path="res://sprites/Characters/GenericBodies/Heads/head3.png" id="8_38m1a"]
-[ext_resource type="Texture2D" uid="uid://crfdhl1cl6s1c" path="res://sprites/Characters/GenericBodies/Horns/horn2.png" id="9_0omei"]
-[ext_resource type="Texture2D" uid="uid://bgfo6v75u6pyn" path="res://sprites/Characters/GenericBodies/Eyes/eye6.png" id="10_ocsng"]
-[ext_resource type="Texture2D" uid="uid://cysf7efwa487e" path="res://sprites/Characters/GenericBodies/Mouths/mouth7.png" id="11_b8p85"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27k6u"]
 texture = ExtResource("3_0jvyo")
@@ -162,16 +158,13 @@ move_horizontal = false
 
 [node name="Dropbox" parent="Drops" instance=ExtResource("7_52nhs")]
 self_modulate = Color(0.909804, 0, 0.913725, 1)
-position = Vector2(880, 360)
+position = Vector2(598, 271)
 
 [node name="Player" parent="." instance=ExtResource("7_3pu61")]
 position = Vector2(399, 224)
 scale = Vector2(0.0492407, 0.0492407)
 
 [node name="Enemy" parent="." instance=ExtResource("5_wdyku")]
-position = Vector2(722, 443)
-scale = Vector2(0.0548553, 0.0548553)
-headTexture = ExtResource("8_38m1a")
-hornsTexture = ExtResource("9_0omei")
-eyesTexture = ExtResource("10_ocsng")
-mouthTexture = ExtResource("11_b8p85")
+position = Vector2(779, 200)
+SPEED = 100.0
+JUMP_VELOCITY = -800

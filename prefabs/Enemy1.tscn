@@ -1,0 +1,325 @@
+[gd_scene load_steps=18 format=3 uid="uid://cm8ag6nw7rh3q"]
+
+[ext_resource type="Script" path="res://scripts/EnemyMain.gd" id="1_mltly"]
+[ext_resource type="Texture2D" uid="uid://bfm1c8rhx87w" path="res://sprites/Characters/GenericBodies/Left hands/leftHand.png" id="2_lj7ug"]
+[ext_resource type="Texture2D" uid="uid://dt4s37cnc0a1a" path="res://sprites/Characters/GenericBodies/Bodies/body1.png" id="3_flk1s"]
+[ext_resource type="Texture2D" uid="uid://cekou65h0n32q" path="res://sprites/Characters/GenericBodies/Right hands/rightHand.png" id="4_7ri82"]
+[ext_resource type="Texture2D" uid="uid://dh6wbv1nvr2b1" path="res://sprites/Characters/GenericBodies/Left feet/foot.png" id="5_jwddb"]
+[ext_resource type="Texture2D" uid="uid://bfxbsfinvkdyt" path="res://sprites/Characters/GenericBodies/Right feet/rightFoot.png" id="6_lwqn6"]
+[ext_resource type="Texture2D" uid="uid://dh4shh2x1mvee" path="res://sprites/Characters/GenericBodies/Heads/head1.png" id="7_qbyr7"]
+[ext_resource type="Texture2D" uid="uid://ciw0fe0p3r67y" path="res://sprites/Characters/GenericBodies/Mouths/mouth5.png" id="8_nyohm"]
+[ext_resource type="Texture2D" uid="uid://b8l52dfw10lor" path="res://sprites/Characters/GenericBodies/Horns/horn5.png" id="9_mpdl4"]
+[ext_resource type="Texture2D" uid="uid://ci1hc2yse2xl0" path="res://sprites/Characters/GenericBodies/Eyes/eye2.png" id="10_srg41"]
+[ext_resource type="Texture2D" uid="uid://dta5wbv8q45kp" path="res://sprites/Characters/GenericBodies/Hairs/hair3.png" id="11_742lu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mqq31"]
+radius = 227.0
+height = 754.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh6rm"]
+size = Vector2(43.203, 37.815)
+
+[sub_resource type="Animation" id="Animation_wd67h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/head:skew")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_y7beb"]
+resource_name = "idle"
+loop_mode = 2
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/body/torso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.41561e-07, -19)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/body/leftHand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-17, -7.00001)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/body/rightHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(21, -12)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flipper/head:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.163968]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Flipper/head:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-35, -19)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Flipper/head:skew")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Flipper/body/rightFeet:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Flipper/body/leftFeet:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_allw3"]
+resource_name = "walking"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flipper/head:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -21), Vector2(0, 0), Vector2(11, -18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flipper/head:skew")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.102974, 0.0, 0.102974]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flipper/head/eyes:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(33.3434, -13.0692), Vector2(0, 0), Vector2(-16.31, -3.01599)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Flipper/head/mouth:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(27.5167, -5.02661), Vector2(0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Flipper/body/torso:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(21, -19), Vector2(0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Flipper/body/rightHand:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(157, 19), Vector2(0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Flipper/body/leftHand:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-171, 7), Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Flipper/body/leftFeet:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-139, 3), Vector2(-69.5, -55), Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Flipper/body/rightFeet:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(84, -39), Vector2(168, 3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n53i"]
+_data = {
+"RESET": SubResource("Animation_wd67h"),
+"idle": SubResource("Animation_y7beb"),
+"walking": SubResource("Animation_allw3")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 517
+script = ExtResource("1_mltly")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(1, -157)
+shape = SubResource("CapsuleShape2D_mqq31")
+
+[node name="Flipper" type="Node2D" parent="."]
+position = Vector2(0, -534)
+
+[node name="Hitbox" type="Area2D" parent="Flipper"]
+position = Vector2(229, -36)
+scale = Vector2(9.51722, 16.3956)
+collision_layer = 256
+collision_mask = 4
+
+[node name="HitBoxCollider" type="CollisionShape2D" parent="Flipper/Hitbox"]
+position = Vector2(24.3153, 27.9953)
+shape = SubResource("RectangleShape2D_lh6rm")
+debug_color = Color(0.87451, 0, 0.254902, 0.639216)
+
+[node name="body" type="Node2D" parent="Flipper"]
+position = Vector2(0, 1.14441e-05)
+
+[node name="leftHand" type="Sprite2D" parent="Flipper/body"]
+texture = ExtResource("2_lj7ug")
+
+[node name="torso" type="Sprite2D" parent="Flipper/body"]
+texture = ExtResource("3_flk1s")
+flip_h = true
+
+[node name="rightHand" type="Sprite2D" parent="Flipper/body"]
+texture = ExtResource("4_7ri82")
+
+[node name="leftFeet" type="Sprite2D" parent="Flipper/body"]
+texture = ExtResource("5_jwddb")
+
+[node name="rightFeet" type="Sprite2D" parent="Flipper/body"]
+texture = ExtResource("6_lwqn6")
+
+[node name="head" type="Sprite2D" parent="Flipper"]
+self_modulate = Color(0.847059, 0, 0.215686, 1)
+texture = ExtResource("7_qbyr7")
+
+[node name="mouth" type="Sprite2D" parent="Flipper/head"]
+texture = ExtResource("8_nyohm")
+
+[node name="hair" type="Sprite2D" parent="Flipper/head"]
+modulate = Color(0.996078, 0.905882, 0.803922, 1)
+texture = ExtResource("11_742lu")
+
+[node name="horns" type="Sprite2D" parent="Flipper/head"]
+modulate = Color(0.996078, 0.905882, 0.803922, 1)
+texture = ExtResource("9_mpdl4")
+
+[node name="eyes" type="Sprite2D" parent="Flipper/head"]
+self_modulate = Color(0, 0.768627, 0.231373, 1)
+texture = ExtResource("10_srg41")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+libraries = {
+"": SubResource("AnimationLibrary_0n53i")
+}
+next/idle = &"idle"
+blend_times = [&"idle", &"idle", 0.5, &"walking", &"idle", 0.5, &"walking", &"walking", 0.5]
