@@ -4,7 +4,7 @@ extends CharacterBody2D
 @export var speed = 100
 @export var jump_force = 500
 @export var gravity = 30
-@onready var animation := $Anim as AnimationPlayer
+@onready var animation := $Flipper/Anim as AnimationPlayer
 # Called every frame
 func _physics_process(delta):
 	if !is_on_floor():
@@ -28,8 +28,9 @@ func movement():
 	if velocity.x != 0:
 		animation.play("walking")
 	else:
-		if $Anim.current_animation != "idle":
-			animation.play("idle")
+		if $Flipper/Anim.is_playing() and $Flipper/Anim.current_animation != "idle":
+			animation.play("RESET")
+#			animation.play("idle")
 		
 	if Input.is_action_just_pressed("ui_up") and is_on_floor():
 		velocity.y -= jump_force
@@ -37,4 +38,4 @@ func movement():
 	move_and_slide()
 
 func attack():
-	$AnimationPlayer.play("attack1")
+	$Flipper/AnimAttack.play("attack1")

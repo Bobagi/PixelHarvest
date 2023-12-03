@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dd4c0uv8qxee2"]
+[gd_scene load_steps=15 format=3 uid="uid://dd4c0uv8qxee2"]
 
 [ext_resource type="Texture2D" uid="uid://ch3n8yl8yag2e" path="res://Art Assets/Background/Sky.png" id="1_g1y7l"]
 [ext_resource type="Script" path="res://scripts/parallax.gd" id="1_r68gv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://crfdhl1cl6s1c" path="res://sprites/Characters/GenericBodies/Horns/horn2.png" id="9_0omei"]
 [ext_resource type="Texture2D" uid="uid://bgfo6v75u6pyn" path="res://sprites/Characters/GenericBodies/Eyes/eye6.png" id="10_ocsng"]
 [ext_resource type="Texture2D" uid="uid://cysf7efwa487e" path="res://sprites/Characters/GenericBodies/Mouths/mouth7.png" id="11_b8p85"]
+[ext_resource type="PackedScene" uid="uid://ujwarmdrsodq" path="res://prefabs/Weapon.tscn" id="12_2hqpa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_27k6u"]
 texture = ExtResource("3_0jvyo")
@@ -120,8 +121,10 @@ sources/0 = SubResource("TileSetAtlasSource_27k6u")
 motion_scale = Vector2(0, 0)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/Sky"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 33.0
+offset_right = 39.0
+offset_bottom = 73.0
 scale = Vector2(28.7846, 16.1571)
 color = Color(0.113725, 0.756863, 1, 1)
 
@@ -175,3 +178,6 @@ headTexture = ExtResource("8_38m1a")
 hornsTexture = ExtResource("9_0omei")
 eyesTexture = ExtResource("10_ocsng")
 mouthTexture = ExtResource("11_b8p85")
+
+[node name="Weapon" parent="." instance=ExtResource("12_2hqpa")]
+position = Vector2(544, 422)
